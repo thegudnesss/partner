@@ -29,7 +29,7 @@ dp = Dispatcher()
 # I18N
 i18n = I18n(
     path=locales_dir,
-    default_locale=config.default_language if hasattr(config, "default_language") else "en",
+    default_locale=config.default_language,
     domain="bot"
 )
 
