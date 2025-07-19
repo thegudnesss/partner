@@ -1,4 +1,3 @@
-# partner/src/database/chats.py
 
 from cashews import cache
 
@@ -47,11 +46,9 @@ class Chats(MongoBaseModel):
             await chat.save()
             log.info(f"Chat {chat_id} created with language {language_code}.")
 
-        # Redisni yangilash
         cache_key = f"chat:{chat_id}:data"
         await cache.set(cache_key, chat.dict(), expire=3600)
 
-        # Langni alohida cache qilamiz
         await cache.set(f"chat:{chat_id}:lang", language_code, expire=3600)
 
         return chat
@@ -93,7 +90,6 @@ class Chats(MongoBaseModel):
         """
         result_id = await super().save()
 
-        # Redisni avtomatik yangilash
         cache_key = f"chat:{self.id}:data"
         await cache.set(cache_key, self.dict(), expire=3600)
 

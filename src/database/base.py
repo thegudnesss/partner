@@ -1,4 +1,3 @@
-# partner/src/database/base.py
 
 from typing import TypeVar, Type, Any, List, Optional, Self
 from motor.motor_asyncio import AsyncIOMotorClient

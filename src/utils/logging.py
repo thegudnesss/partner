@@ -1,11 +1,9 @@
-# src/utils/logging.py
 
 import sys
 
 import picologging
 import structlog
 
-# structlog konfiguratsiyasi
 structlog.configure(
     cache_logger_on_first_use=True,
     wrapper_class=structlog.make_filtering_bound_logger(picologging.INFO),
@@ -18,12 +16,9 @@ structlog.configure(
 )
 
 log = structlog.wrap_logger(logger=picologging.getLogger())
-# picologging konfiguratsiyasi
+
 picologging.basicConfig(
     format="%(message)s",
     stream=sys.stdout,
     level=picologging.INFO,
 )
-
-# structlog logger obyekti
-

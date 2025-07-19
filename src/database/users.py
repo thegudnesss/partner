@@ -45,11 +45,11 @@ class Users(MongoBaseModel):
             await user.save()
             log.info(f"User {user_id} created with language {language_code}.")
 
-        # Redisni yangilash
+        
         cache_key = f"user:{user_id}:data"
         await cache.set(cache_key, user.dict(), expire=3600)
 
-        # Langni alohida cache qilamiz
+        
         await cache.set(f"user:{user_id}:lang", language_code, expire=3600)
 
         return user
@@ -91,7 +91,7 @@ class Users(MongoBaseModel):
         """
         result_id = await super().save()
 
-        # Redisni avtomatik yangilash
+        
         cache_key = f"user:{self.id}:data"
         await cache.set(cache_key, self.dict(), expire=3600)
 

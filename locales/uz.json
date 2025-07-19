@@ -1,0 +1,25 @@
+{
+  "StartPage": {
+    "text": "Assalomu alaykum! MediaBotga xush kelibsiz.",
+    "buttons": [
+      { "text": "📂 Media katalogi", "callback_data": "page:CatalogPage" },
+      { "text": "🎞 Qidirish", "callback_data": "page:SearchPage" },
+      { "text": "🏆 Mening profilim", "callback_data": "page:ProfilePage" },
+      { "text": "🤝 Hamkorlik", "callback_data": "page:PartnerPage" },
+      { "text": "⚙️ Sozlamalar", "callback_data": "page:SettingsPage" },
+      { "text": "ℹ️ Yordam", "callback_data": "page:HelpPage" }
+    ]
+  },
+  "CatalogPage": {
+    "text": "Media katalogidan tur tanlang:",
+    "buttons": [
+      { "text": "🗾 Anime", "callback_data": "page:CategoryPage:name=anime" },
+      { "text": "🎥 Kino", "callback_data": "page:CategoryPage:name=kino" },
+      { "text": "🦸 Multfilm", "callback_data": "page:CategoryPage:name=multfilm" },
+      { "text": "🎭 Drama", "callback_data": "page:CategoryPage:name=drama" },
+      { "text": "📺 Serial", "callback_data": "page:CategoryPage:name=serial" },
+      { "text": "📚 Boshqa", "callback_data": "page:CategoryPage:name=boshqa" },
+      { "text": "↩️ Ortga", "callback_data": "nav:back" }
+    ]
+  }
+}
